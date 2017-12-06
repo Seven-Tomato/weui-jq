@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>pull-to-refresh</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+     <style type="text/css">
+		body, html {
+			  height: 100%;
+			  -webkit-tap-highlight-color: transparent;
+		}
+		
+     </style>
+</head>
+<body ontouchstart="">
+ 
+  <div  class="weui-pull-to-refresh pull" style="background-color: #acd;">
+      <!-- 定义在pull1上的下拉插件 -->
+	   <div class="weui-pull-to-refresh__layer">
+	      <div class="weui-pull-to-refresh__arrow"></div>
+	      <div class="weui-pull-to-refresh__preloader"></div>
+	      <div class="down">下拉刷新</div>
+	      <div class="up">释放刷新</div>
+	      <div class="refresh">正在刷新</div>
+	    </div>
+	   <!-- 完美分割线 -->
+	   <h2 style="text-align: center;">请用力的来这个盒子</h2>
+ </div>
+
+   
+   
+   
+   <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+   <script type="text/javascript" src="js/jquery-weui.js"></script>
+    
+    <script>
+      $(".pull").pullToRefresh().on("pull-to-refresh", function() {
+      	/*一秒钟之后结束*/
+      	/*把完成下拉刷新要发生的事件定义在里面（这里是显示当前的时间）*/
+		        setTimeout(function() {
+		           $(".pull").pullToRefreshDone();
+		             $(".pull").append('<p style="text-align:center;">拉了一次</>')
+		        }, 1000);
+		     
+      });
+
+    </script>
+
+
+     
+    
+</body>
+</html>

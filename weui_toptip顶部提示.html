@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>toptip</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+</head>
+<body ontouchstart="" >
+   <div style="height:200px;"><h1 style="text-align: center;padding-top: 50px">toptip</h1></div>
+    <a href="javascript:;" id="show-toptip-success" class="weui-btn weui-btn_primary">toptip success</a> 
+
+    <a href="javascript:;" id="show-toptip-error" class="weui-btn weui-btn_primary">toptip error</a>  
+
+    <a href="javascript:;" id="show-toptip-warning" class="weui-btn weui-btn_primary">toptip warning</a>
+
+    <a href="javascript:;" id="show-toptip-success2" class="weui-btn weui-btn_primary">toptip success2</a>
+          
+         
+    
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <!-- 
+       显示在页面顶部的轻量级提示，一般用来反馈用户的操作结果，比如表单校验失败等。
+
+        JS方法定义如下：
+        $.toptip(text, [duration, type]);
+        示例：
+        $.toptip('操作成功', 'success');
+        $.toptip('操作失败', 'error');
+        $.toptip('警告', 'warning');
+        $.toptip('操作成功', 2000, 'success');  //设置显示时间
+        注意，此组件从 V0.7.2 版本开始才可以使用。
+       
+     -->
+  <script>
+      
+      $(document).on("click", "#show-toptip-success", function() {
+               $.toptip('操作成功', 'success');
+      })
+     
+      $(document).on("click", "#show-toptip-error", function() {
+               $.toptip('操作失败', 'error');
+      })
+
+      $(document).on("click", "#show-toptip-warning", function() {
+               $.toptip('警告', 'warning');
+      })
+
+       $(document).on("click", "#show-toptip-success2", function() {
+                $.toptip('操作成功', 800, 'success');  //设置显示时间
+      })
+  
+    </script>
+
+</body>
+</html>

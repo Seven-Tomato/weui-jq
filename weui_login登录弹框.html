@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+    
+      
+
+
+</head>
+<body ontouchstart="" >
+     <div class="weui-cells__title">login对话框</div>
+     
+      <a href="javascript:;" id="show-login" class="weui-btn weui-btn_primary">登录框login</a>
+      <a href="javascript:;" id="show-login2" class="weui-btn weui-btn_primary">登录框login2</a>
+     
+     
+   
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+        <!-- 
+            显示一个登录框：
+
+			$.login("自定义的消息内容", function(username, password) {
+			  // 这里进行登录操作
+			}, function() {
+			});
+
+			//如果参数过多，建议通过 object 方式传入
+			$.login({
+			  title: '标题',
+			  text: '内容文案',
+			  username: 'tom',  // 默认用户名
+			  password: 'tom',  // 默认密码
+			  onOK: function (username, password) {
+			    //点击确认
+			  },
+			  onCancel: function () {
+			    //点击取消
+			  }
+			});
+
+     -->
+    <script>
+        $(document).on("click", "#show-login", function() {
+            $.login("请输入用户名和密码",function(username,password){
+                   $.alert("欢迎"+username,"登录成功")
+            },function(){
+                  /*取消登录*/
+            	})
+        });
+        
+        
+        $(document).on("click", "#show-login2", function() {
+	           $.login({
+				  title: '登录',
+				  text: '请输入用户名和密码',
+				  username: 'jake',  // 默认用户名
+				  password: '110',  // 默认密码
+				  onOK: function (username, password) {
+				      $.alert("欢迎"+username,"登录成功")
+				  },
+				  onCancel: function () {
+				    //点击取消
+				  }
+				});
+        });
+
+     
+       
+    </script>
+</body>
+</html>

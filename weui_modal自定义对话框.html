@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>modal</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+    
+      
+
+
+</head>
+<body ontouchstart="" >
+     <div class="weui-cells__title">modal</div>
+     
+      <a href="javascript:;" id="show-modal" class="weui-btn weui-btn_primary">自定义对话框</a>
+    
+     
+   
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+        <!-- 
+            自定义对话框
+
+            上述的三种对话框都是 $.modal 的一种特殊形式。你可以通过 $.modal 来定制对话框:
+
+            $.modal({
+              title: "Hello",
+              text: "我是自定义的modal",
+              buttons: [
+                { text: "支付宝", onClick: function(){ console.log(1)} },
+                { text: "微信支付", onClick: function(){ console.log(2)} },
+                { text: "取消", className: "default", onClick: function(){ console.log(3)} },
+              ]
+            });
+            关闭对话框
+
+            默认情况下，点击对话框的按钮都会先关闭对话框再触发回调函数。
+
+            你可以通过JS来关闭任何正在显示的对话框:
+
+            $.closeModal();
+            默认配置
+
+            对话框的默认是 $.modal.prototype.defaults，默认配置如下：
+
+            defaults = $.modal.prototype.defaults = {
+              title: "提示",
+              text: undefined,
+              buttonOK: "确定",
+              buttonCancel: "取消",
+              buttons: [{
+                text: "确定",
+                className: "primary"
+              }],
+              autoClose: true //点击按钮自动关闭对话框，如果你不希望点击按钮就关闭对话框，可以把这个设置为false
+            };
+     -->
+    <script>
+        $(document).on("click", "#show-modal", function() {
+              $.modal({
+                title: "Hello",
+                text: "我是自定义的modal",
+                buttons: [
+                  { text: "支付宝", onClick: function(){ console.log(1)} },
+                  { text: "微信支付", onClick: function(){ console.log(2)} },
+                  { text: "取消", className: "default", onClick: function(){ console.log(3)} }
+                
+                ]
+              });
+        });
+        
+
+
+        
+       
+    </script>
+</body>
+</html>

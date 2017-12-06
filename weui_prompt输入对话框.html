@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>prompt</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+    
+      
+
+
+</head>
+<body ontouchstart="" >
+     <div class="weui-cells__title">prompt</div>
+     
+      <a href="javascript:;" id="show-prompt" class="weui-btn weui-btn_primary">输入号码的对话框</a>
+      <a href="javascript:;" id="show-prompt2" class="weui-btn weui-btn_primary">输入昵称的对话框</a>
+     
+     
+   
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+        <!-- 
+            显示一个带有输入框的对话框,可以让用户输入信息
+
+            $.prompt("自定义的消息内容", function(text) {
+              //点击确认后的回调函数
+              //text 是用户输入的内容
+            }, function() {
+              //点击取消后的回调函数
+            });
+
+            //如果参数过多，建议通过 object 方式传入
+            $.prompt({
+              title: '标题',
+              text: '内容文案',
+              input: '输入框默认值',
+              empty: false, // 是否允许为空
+              onOK: function (input) {
+                //点击确认
+              },
+              onCancel: function () {
+                //点击取消
+              }
+            });
+
+     -->
+    <script>
+        $(document).on("click", "#show-prompt", function() {
+            $.prompt("请输入号码","我的标题",function(text){
+               $.alert("已成功输入！");
+            },function(){
+                $.alert("确认取消？");
+            });
+        });
+        
+
+
+         $(document).on("click", "#show-prompt2", function() {
+             $.prompt({
+              title: '标题',
+              text: '请输入你的昵称',
+              input: 'james',
+              empty: false, // 是否允许为空
+              onOK: function (input) {
+                  $.alert("欢迎"+input,"注册成功")
+              },
+              onCancel: function () {
+                $.alert("确认取消吗？")
+              }
+            });
+        });
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>tabbar</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+     <!-- 
+       tabbar，底部导航，通常用作 Web 应用的主界面底部导航，类似于微信主界面的底部“微信”、“通讯录”、“发现”和“我”的导航区。每个功能包含一个图标和该功能简洁的文字描述。
+
+       .weui-tab 作为外层容器，高度撑满它的父容器的高度，
+       .weui-tab__bd 作为 tab 的主体内容，占据除了 .weui-tabbar 以外的全部父容器的高度，
+       .weui-tabbar 则为底部的导航栏。
+       .weui-tabbar__item 为 .weui-tabbar 的子元素，表示一个导航区，建议不超过 5 个。
+
+        图标 .weui-tabbar__icon 约定尺寸为 27px * 27px ，二倍即 54px * 54px。
+        关于 active 态，开发者根据需要，给当前激活的 .weui-tabbar__item 添加标示的 .weui-bar__item-on 类名，然后控制文字颜色和图标变化。
+        自动切换
+
+        在正确的HTML结构前提下，给 .weui-tabbar__item 或者 .weui-navbar__item 加上 href="#id" 指向一个 .weui-tab__bd-item，即可实现点击的时候自动切换。但是请自行确保初始状态的一致。
+     -->
+     <style type="text/css">
+          body, html {height: 100%;
+                      -webkit-tap-highlight-color: transparent;
+     </style>
+</head>
+<body ontouchstart="" >
+     <!-- 容器 -->
+     <div class="weui-tab">
+        <div class="weui-tab__bd">
+           <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+             页面一
+           </div>
+           <div id="tab2" class="weui-tab__bd-item">
+             页面二
+           </div>
+           <div id="tab3" class="weui-tab__bd-item">
+             页面三
+           </div>
+           <div id="tab4" class="weui-tab__bd-item">
+             页面四
+           </div>
+        </div>
+
+        <div class="weui-tabbar">
+            <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
+               
+                <div class="weui-tabbar__icon" style="position: relative;">
+                 <span class="weui-badge" style="position: absolute;top: -9px;right:-13px;">8</span>
+                  <img src="img/icon_nav_button.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">微信</p>
+            </a>
+             <a href="#tab2" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                  <img src="img/icon_nav_button.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">微信</p>
+            </a>
+             <a href="#tab3" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon" style="position: relative;">
+                  <img src="img/icon_nav_button.png" alt="">
+                  <span class="weui-badge weui-badge_dot" style="position: absolute;top: -2px;right: -6px;"></span>
+                </div>
+                <p class="weui-tabbar__label">微信</p>
+            </a>
+             <a href="#tab4" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                  <img src="img/icon_nav_button.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">微信</p>
+            </a>
+        </div>
+     </div>
+         
+    
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+
+</body>
+</html>

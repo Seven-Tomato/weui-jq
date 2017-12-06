@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+    <!-- 
+       用来显示和输入百分比数据，如果没有用JS进行初始化，则为只读。
+     -->
+</head>
+<body ontouchstart="" >
+    
+     <div class="weui-slider" >
+        <div class="weui-slider__inner">
+          <div style="width: 0%;" class="weui-slider__track"></div>
+          <div style="left: 0%;" class="weui-slider__handler"></div>
+        </div>
+    </div>
+    
+      <div class="weui-slider"  id="slider">
+        <div class="weui-slider__inner">
+          <div style="width: 30%;" class="weui-slider__track"></div>
+          <div style="left: 30%;" class="weui-slider__handler"></div>
+        </div>
+    </div>
+    
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+
+
+    <!-- 
+    使用 $('#slider').slider() 进行初始化。
+    初始化的时候可以传入一个回调函数，当用户进行滑动操作的时候会触发这个回调函数。
+     -->
+    <script type="text/javascript">
+      $('#slider').slider(function(percent){
+                console.log(percent)
+      })
+    </script>
+</body>
+</html>

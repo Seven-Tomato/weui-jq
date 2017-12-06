@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>scroll-loadmore-div</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+    <style type="text/css">
+      body, html {
+        height: 100%;
+        -webkit-tap-highlight-color: transparent;
+        border: 1px solid red;
+    }
+   
+     .wrap{height: 100%;overflow: auto;}
+    </style>
+    <!-- 
+    当加载放在一个DIV容器中的时候
+      1.注意容器的高度和设备的高度相同超出出现滚动条height: 100%;overflow: auto;
+      2.必须设置body, html height: 100%;
+     -->
+    
+</head>
+<body ontouchstart="">
+
+ <div class="wrap">
+   
+    <div id="texts">
+      <p>滚动的是wrap 正在加载放在wrapdiv里面的，滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的滚动的是wrap 正在加载放在wrapdiv里面的</p>
+    </div>
+   
+    <div class="weui-loadmore">
+      <i class="weui-loading"></i>
+      <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+ </div>
+
+
+   <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+   <script type="text/javascript" src="js/jquery-weui.js"></script>
+ <script type="text/javascript">
+       alert($(window).height())
+     </script>
+
+
+    <script>
+      var loading = false;
+      $(".wrap").infinite().on("infinite", function() {
+               if(loading) return;
+              loading = true;
+              setTimeout(function() {
+                $("#texts").append("<p style='color:red;'>加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字加载了这么多卵用的文字</p>");
+                loading = false;
+              }, 1500);/*加载时间*/
+     
+      });
+    </script>
+  
+
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- <script>
+      $(".infinite").infinite().on("infinite", function() {
+        var self = this;
+        if(self.loading) return;
+        console.log(self)
+        self.loading = true;
+        console.log(self);
+        setTimeout(function() {
+          $(self).find(".content-padded").append("<p>我是加载的新内容。我是加载的新内容。。。我是加载的新内容。。。我是加载的新内容。。。我是加载的新内容。。。我是加载的新内容。。。我是加载的新内容。。。我是加载的新内容。。。我是加载的新内容。。。。。</p>");
+          self.loading = false;
+        }, 2000);   //模拟延迟
+      });
+    </script> -->

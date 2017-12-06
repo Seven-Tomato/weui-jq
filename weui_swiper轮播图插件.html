@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>banner</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+</head>
+<body ontouchstart="" >
+    <div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/swiper-1.jpg" width="100%"></div>
+            <div class="swiper-slide"><img src="img/swiper-2.jpg" width="100%"></div>
+            <div class="swiper-slide"><img src="img/swiper-3.jpg" width="100%"></div>
+            <div class="swiper-slide"><img src="img/swiper-1.jpg" width="100%"></div>
+        </div>
+       <!--  <div class="swiper-pagination swiper-pagination-bullets">
+            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+        </div> -->
+    
+   </div>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <script type="text/javascript" src="js/plugn-js/swiper.jquery.js"></script>
+    <script type="text/javascript" src="js/plugn-js/swiper-wrap.js"></script>
+    <!-- 
+    为了使用幻灯片，你必须引用如下的JS文件：
+<script type='text/javascript' src='/js/swiper.js' charset='utf-8'></script>
+  在 Swiper 容器上调用 $(".swiper-container").swiper(config) 来初始化.
+  配置
+  你可以通过 data-xxx 属性的方式在 .swiper-container 上写配置, 也可以通过 $().swiper(config) 的 config 参数来设置。Swiper 是对第三方插件的一个简单封装，更多文档请参阅 Swiper 官方文档
+     -->
+    <script>
+      $(".swiper-container").swiper({
+        loop: true,
+        autoplay: 2000
+      });
+    </script>
+</body>
+</html>

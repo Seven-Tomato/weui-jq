@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>confirm</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+    
+      
+
+
+</head>
+<body ontouchstart="" >
+     <div class="weui-cells__title">confirm对话框</div>
+     
+      <a href="javascript:;" id="show-confirm" class="weui-btn weui-btn_primary">只是单纯消息的confirm </a>
+      <a href="javascript:;" id="show-confirm2" class="weui-btn weui-btn_primary">自定义内容和标题confirm </a>
+
+      <a href="javascript:;" id="show-confirm3" class="weui-btn weui-btn_primary">点击确定取消都有回调的confirm </a>
+      
+    <a href="javascript:;" id="show-confirm4" class="weui-btn weui-btn_primary">点击确定取消都有回调的confirm </a>
+   
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+        <!-- 
+        显示一段确认消息，有一个确认按钮和一个取消按钮
+            $.confirm("自定义的消息内容");
+            $.confirm("自定义的消息内容", "自定义的标题");
+            $.confirm("自定义的消息内容", function() {
+              //点击确认后的回调函数
+              }, function() {
+              //点击取消后的回调函数
+              });
+
+
+            //如果参数过多，建议通过 object 方式传入
+            $.confirm({
+              title: '标题',
+              text: '内容文案',
+              onOK: function () {
+                //点击确认
+              },
+              onCancel: function () {
+              }
+            });
+
+     -->
+    <script>
+        $(document).on("click", "#show-confirm", function() {
+            $.confirm("单纯的消息");
+        });
+
+        $(document).on("click", "#show-confirm2", function() {
+            $.confirm("我的消息","我的标题");
+        });
+
+        $(document).on("click", "#show-confirm3", function() {
+            $.confirm("我的消息",function(){
+              alert("确认的回调")
+            },function(){
+               alert("取消的回调")
+            });
+        });
+
+        $(document).on("click", "#show-confirm4", function() {
+            $.confirm({
+              title: '标题',
+              text: '内容文案',
+              onOK: function () {
+                alert("OK!")
+              },
+              onCancel: function () {
+                 alert("Cancel!")
+              }
+            });
+        });
+    </script>
+</body>
+</html>

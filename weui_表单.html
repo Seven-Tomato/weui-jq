@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>表单是基于列表的布局实现的.包括很多常用的表单控件</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+</head>
+<body ontouchstart="" >
+     <div class="weui-cells__title">基于cell的表单</div>
+     <div class="weui-cells weui-cells_from">
+      <!-- qqnumber -->
+         <div class="weui-cell">
+             <div class="weui-cell__hd ">
+                 <label class="weui-label">qq</label>
+             </div>
+             <div class="weui-cell__bd">
+                <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入qq号">
+             </div>
+         </div>
+       <!-- 手机tel需要验验证码的cell模块儿 -->
+         <div class="weui-cell weui-cell_vcode">
+             <div class="weui-cell__hd">
+                 <label class="weui-label">手机号码</label>
+             </div>
+             <div class="weui-cell__bd">
+                 <input class="weui-input" type="tel" placeholder="请输入手机号码">
+             </div>
+             <div class="weui-cell__ft">
+                 <button class="weui-vcode-btn">获取验证码</button>
+             </div>
+          </div>
+        <!-- 日期date -->  
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">日期</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input  class="weui-input" type="date" value="">
+            </div>
+        </div>
+        <!--时间datetime-local-->
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">时间</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input  class="weui-input" type="datetime-local" value="">
+            </div>
+        </div>
+       <!--验证码-->
+        <div class="weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">验证码</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input  class="weui-input" type="number" placeholder="请输入验证码">
+            </div>
+            <div class="weui-cell__ft">
+                <img class="weui-vcode-img" src="img/vcode.jpg">
+            </div>
+        </div>
+     </div>
+     <!-- weui-cells_from外面底部的文字说明 -->
+      <div class="weui-cells__tips">底部说明文字底部说明文字</div>
+     
+<!-- 报错的表单weui-cell_warn -->
+     <div class="weui-cells__title">报错的表单</div>
+     <div calss="weui-cells weui-cells_from">
+         <div class="weui-cell weui-cell_warn">
+             <div class="weui-cell__hd">
+                 <label class="weui-label">卡号</label>
+             </div>
+              <div class="weui-cell__bd">
+                 <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入卡号">
+             </div>
+             <div class="weui-cell__ft">
+                 <span class="weui-icon-warn"></span>
+             </div>
+
+         </div>
+     </div>
+<!--开关witch-->    
+   <div class="weui-cells__title">开关</div> 
+   <div class="weui-cells weui-cells_from">
+      <div class="weui-cell weui-cell_switch">
+          <div class="weui-cell__bd">
+              开关
+          </div>
+          <div class="weui-cell__ft">
+              <input class="weui-switch" type="checkbox" >
+          </div>
+      </div>
+
+      <div class="weui-cell weui-cell_switch">
+         <div class="weui-cell__bd">兼容IE Edge的版本</div>
+             <div class="weui-cell__ft">
+                   <label for="switchCP" class="weui-switch-cp">
+                     <input id="switchCP" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                     <div class="weui-switch-cp__box"></div>
+                   </label>
+             </div>
+      </div>
+    </div> 
+
+<!-- 文本框 -->
+    <div class="weui-cells__title">文本框</div>
+    <div class="weui-cells">
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          <input class="weui-input" type="text" placeholder="请输入文本">
+        </div>
+      </div>
+    </div>
+
+<!-- 文本域 -->
+     <div class="weui-cells__title">文本域</div>
+        <div class="weui-cells weui-cells_form">
+          <div class="weui-cell">
+            <div class="weui-cell__bd">
+              <textarea class="weui-textarea" placeholder="请输入文本" rows="4"></textarea>
+              <div class="weui-textarea-counter"><span>0</span>/200</div>
+            </div>
+          </div>
+        </div>
+<!--选择电话号码区号 -->   
+    <div class="weui-cells__title">选择</div>
+    <div class="weui-cells">
+          <div class="weui-cell weui-cell_select weui-cell_select-before">
+                <div class="weui-cell__hd">
+                    <select class="weui-select" name="select2">
+                        <option value="1">+86</option>
+                        <option value="2">+80</option>
+                        <option value="3">+84</option>
+                        <option value="4">+87</option>
+                    </select>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入号码">
+                </div>
+          </div>
+      </div>
+ <!-- 选择账号国籍 -->
+    <div class="weui-cells__title">选择</div>
+    <div class="weui-cells">
+            <div class="weui-cell weui-cell_select">
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="select1">
+                        <option selected="" value="1">微信号</option>
+                        <option value="2">QQ号</option>
+                        <option value="3">Email</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label">国家/地区</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="select2">
+                        <option value="1">中国</option>
+                        <option value="2">美国</option>
+                        <option value="3">英国</option>
+                    </select>
+                </div>
+            </div>
+    </div>
+
+<!-- 阅读条款 -->
+    <label for="weuiAgree" class="weui-agree">
+            <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
+            <span class="weui-agree__text">
+                阅读并同意<a href="javascript:void(0);">《相关条款》</a>
+            </span>
+    </label>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+</body>
+</html>

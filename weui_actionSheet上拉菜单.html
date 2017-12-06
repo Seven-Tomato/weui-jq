@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>ActionSheet上拉菜单</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+    
+      
+
+
+</head>
+<body ontouchstart="" >
+     
+      <a href="javascript:;" id="show-ActionSheet" class="weui-btn weui-btn_primary">ActionSheet</a>
+      <a href="javascript:;" id="show-ActionSheet2" class="weui-btn weui-btn_primary">有背景颜色ActionSheet</a>
+   
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <!-- 
+      ActionSheet用于显示包含一系列可交互的动作集合，包括说明、跳转等。由底部弹出，一般用于响应用户对页面的点击。
+      ActionSheet 只能通过 JavaScript 进行调用:
+          $.actions({
+            actions: [{
+              text: "编辑",
+              onClick: function() {
+                //do something
+              }
+            },{
+              text: "删除",
+              onClick: function() {
+                //do something
+              }
+            }]
+          });
+          参数说明
+          通过 $.actions(params) 方法打开 ActionSheet。可用参数如下：
+          参数名 说明
+          actions 菜单项，关于每一个菜单项的配置请参见下文
+          title 可以给弹层设置一个标题，如果不设置则不会显示标题
+          onClose 关闭弹层的回调函数
+          actions 参数是一个数组，数组中的每一项都是一个菜单。
+
+          对每一个菜单的可用配置如下：
+
+          参数名 说明
+          text  菜单显示的文案
+          className 菜单上额外追加的class
+          onClick 点击之后的回调函数
+          颜色配置
+
+          从 V0.7.0 开始， 可以通过 className 参数配置不同的颜色或者背景，可以参考右侧的demo用法如下：
+
+          $.actions({
+            actions: [
+              {
+                text: "发布",
+                className: "color-primary",
+              },
+            ...
+          });
+          所有可用配置如下：
+          color-primary color-success color-danger  color-warning
+          bg-primary    bg-success    bg-danger     bg-warning
+     -->
+  <script>
+        $(document).on("click", "#show-ActionSheet", function() {
+               $.actions({
+                    title:"选择菜单",
+                    actions: [{
+                          text: "编辑",
+                          className:"color-primary",
+                          onClick: function() {
+                            //do something
+                          }
+                        },{
+                          text: "删除",
+                          className:"color-warning",
+                          onClick: function() {
+                            //do something
+                          }
+                        }]
+                   });
+           });
+
+
+         $(document).on("click", "#show-ActionSheet2", function() {
+               $.actions({
+                    title:"选择菜单",
+                    actions: [{
+                          text: "编辑",
+                          className:"bg-primary",
+                          onClick: function() {
+                            //do something
+                          }
+                        },{
+                          text: "删除",
+                          className:"bg-warning",
+                          onClick: function() {
+                            //do something
+                          }
+                        }]
+                   });
+           });
+    
+    </script>
+
+</body>
+</html>

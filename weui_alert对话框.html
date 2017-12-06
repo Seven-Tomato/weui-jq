@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>alert</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+    <!-- 
+      对话框只能通过 JavaScript 进行调用，我们提供了三种常用的对话框 Alert, Confirm, Prompt 和 Login. 你也可以通过 $.modal 来自定义对话框
+      实际上， Alert, Confirm, Prompt 和 Login 都是 Modal 的一种定制而已。
+     -->
+
+</head>
+<body ontouchstart="" >
+     <div class="weui-cells__title">alert对话框</div>
+     
+      <a href="javascript:;" id="show-alert" class="weui-btn weui-btn_primary">只是单纯消息的alert</a>
+      <a href="javascript:;" id="show-alert2" class="weui-btn weui-btn_primary">自定义标题的alert</a>
+      <a href="javascript:;" id="show-alert3" class="weui-btn weui-btn_primary">有回调函数的alert</a>
+      <a href="javascript:;" id="show-alert4" class="weui-btn weui-btn_primary">有回调函数的alert</a>
+      <a href="javascript:;" id="show-alert5" class="weui-btn weui-btn_primary">通过object传入参数alert</a>
+     
+    
+   
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+        <!-- 
+             $.alert("自定义的消息内容");
+             $.alert("自定义的消息内容", "自定义的标题");
+             $.alert("自定义的消息内容", function() {
+           //点击确认后的回调函数
+              });
+             $.alert("自定义的消息内容", "标题", function() {
+              //点击确认后的回调函数
+             });
+
+         //如果参数过多，通过 object 方式传入
+            $.alert({
+              title: '标题',
+              text: '内容文案',
+              onOK: function () {
+                //点击确认
+              }
+            });
+
+     -->
+    <script>
+        $(document).on("click", "#show-alert", function() {
+            $.alert("这里弹出的是纯消息");
+        });
+
+        $(document).on("click", "#show-alert2", function() {
+            $.alert("这里是弹出消息","我的标题");
+        });
+
+        $(document).on("click", "#show-alert3", function() {
+            $.alert("这里是弹出消息",function(){
+                alert("我是点击确定按钮后的回调函数")
+            });
+        });
+
+        $(document).on("click", "#show-alert4", function() {
+            $.alert("这里是弹出消息","我的标题",function(){
+                alert("我是点击确定按钮后的回调函数")
+            });
+        });
+        $(document).on("click", "#show-alert5",function(){
+              $.alert({
+                title: '标题',
+                text: '内容文案',
+                onOK: function() {
+                  alert("ok")
+                }
+              });
+        });
+    </script>
+</body>
+</html>

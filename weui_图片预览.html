@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>swiper-photo</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+</head>
+<body ontouchstart="" >
+    
+      <a href="javascript:;" class="weui-btn weui-btn_primary" id="pb1">只有图片</a>
+      <a href="javascript:;" class="weui-btn weui-btn_primary" id="pb2">带说明文案</a>
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+    <script type="text/javascript" src="js/plugn-js/photos.js"></script>
+    
+    <!-- 
+     $.photoBrowser(config) 有如下配置可用：
+      参数名 说明  示例
+      items 需要展示的图片 items: ["./images/swiper-1.jpg", "./images/swiper-2.jpg", ...]
+      onSlideChange 左右翻页的回调函数 onSlideChange: function(index) { console.log(index); }
+      onOpen  每次打开之后执行回调  onOpen: function() { console.log(this); }
+      onClose 每次关闭之后执行回调  onClose: function() { console.log(this); }
+      tpl 图片浏览器的HTML模板，除非非常熟悉，否则不建议直接修改模板 
+      initIndex 初始化显示第几张，从0开始。 V0.7.1版本开始才支持此参数。  
+      注意，请不要使用上述列表没有列出来的配置，因为这些没有列出来的是下一个版本很可能会改动的，包括 swiper 对象可能会被删除。
+
+
+      属性和方法
+      $.photoBrowser 会返回一个 photos 实例，这个实例上有如下方法和属性可以使用：
+      方法/属性 说明
+      open(index) 打开图片浏览器，可以传入一个可选的 index 参数来指定打开后默认显示的图片(从0开始)
+      close() 关闭图片浏览器
+      slideTo(index, duration)  滚动到指定图片
+      slidePrev() 滚动到上一张图片
+      slideNext() 滚动到下一张图片
+      activeIndex 当前显示的图片
+      currentScale  当前缩放比例
+      为了调用以上方法，请确保您的版本为 V0.8.0 或者更新。其中所有属性都是只读的，请不要随意修改。请不要调用上述未列出的任何方法，因为这些方法都是内部使用的。
+      注意，从 V0.7.0 开始才支持 photos 组件。
+     -->
+   <script>
+
+      var pb1 = $.photoBrowser({
+        items: [
+          "img/swiper-1.jpg",
+          "img/swiper-2.jpg",
+          "img/swiper-3.jpg",
+          "img/swiper-1.jpg"
+        ],
+
+        onSlideChange: function(index) {
+          console.log(this, index);
+        },
+
+        onOpen: function() {
+          console.log("onOpen", this);
+        },
+        onClose: function() {
+          console.log("onClose", this);
+        }
+      });
+      $("#pb1").click(function() {
+        pb1.open();
+      });
+      var pb2 = $.photoBrowser({
+        items: [
+          {
+            image: "img/swiper-1.jpg",
+            caption: "图片说明1"
+          },
+          {
+            image: "img/swiper-2.jpg",
+            caption:  "图片说明2"
+          },
+          {
+            image: "img/swiper-3.jpg",
+            caption:  "图片说明3"
+          },
+          {
+            image: "img/swiper-1.jpg",
+            caption: "图片说明4"
+          }
+        ],
+        initIndex: 0//显示为第几张图片
+      });
+      $("#pb2").click(function() {
+        pb2.open();
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="css/weui.css">
+</head>
+<body ontouchstart="" >
+    <h2 style="height: 200px;text-align: center;line-height: 200px">notification通知</h2>
+    <a href="javascript:;" id="show-notification" class="weui-btn  weui-btn_primary">按钮</a>
+
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-weui.js"></script>
+   
+   <!-- 
+     一次只能显示一个通知，如果在前一个通知未消失的情况下显示下一个通知。则下一个通知会直接替换掉前一个通知
+        Params
+        Param   Default Description
+        title   undefined   通知的标题
+        text    undefined   通知的文案
+        media   undefined   图标
+        data    undefined   点击通知后，这个data参数会传给 onClick
+        onClick undefined   点击回调
+        onClose undefined   关闭通知的回调
+        time    4000    自动消失的时间
+
+    -->
+   <script>
+      $(document).on("click", "#show-notification", function() {
+        $.noti({
+          title: "中奖啦！",
+          text: "双色球一等奖100注",
+          media: "<img src='img/present.png' />",
+          data: {
+            message: "逗你玩的!"
+          },
+          time: 3000,//显示时间
+          onClick: function(data) {
+            $.alert(data.message);
+          },
+         /* onClose:function(){
+            $.alert("byebye")
+          }*///结束时
+        });
+      });
+    </script>
+  
+</body>
+</html>
